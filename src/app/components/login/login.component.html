@@ -1,0 +1,30 @@
+<div class="login-container">
+    <div>
+        <h2>Bienvenido a Meditrack</h2>
+        <p>Por ingrese sus credenciales para entrar en la aplicación</p>
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Username" formControlName="username">
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Password" formControlName="password">
+                </mat-form-field>
+            </p>
+
+            @if(error) {
+            <p class="error">
+                {{ error }}
+            </p>
+            }
+
+            <div class="button">
+                <button type="submit" mat-button>Login</button>
+            </div>
+
+        </form>
+    </div>
+</div>

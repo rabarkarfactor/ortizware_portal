@@ -1,0 +1,32 @@
+.menu-panel-container {
+    /* display: flex; */
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.upic {
+    display: block;
+    margin: 0px auto 10px auto;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.upic img {
+    width: 60px;
+}
+
+.uname {
+    display: block;
+    font-size: 1.2rem;
+    color: darkslateblue;
+    font-weight: bolder;
+}
+
+.uprofile {
+    display: block;
+    font-size: 0.8rem;
+    color: gray;
+}
