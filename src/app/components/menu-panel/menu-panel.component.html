@@ -1,7 +1,24 @@
 <div class="menu-panel-container">
-    <div class="upic mat-elevation-z4">
-        <img src="assets/imgs/generic_user.svg" />
+    <div>
+        <div class="upic mat-elevation-z4">
+            <img [src]="user.safePic" />
+        </div>
+        <label class="uname">{{user.fullName}}</label>
+        <span class="uprofile">{{user.title}}</span>
+        <button mat-fab extended (click)="sendLogout()">
+            <mat-icon>logout</mat-icon>
+            Cerrar Sesión
+        </button>
     </div>
-    <label class="uname">User Generic</label>
-    <span class="uprofile">Administrator</span>
+
+    <div class="menuList">
+    <mat-nav-list>
+        @for(appm of user.modules; track appm.id) {
+        <a mat-list-item [routerLink]="appm.label" href="#" class="menuListLink">
+            <img src="assets/imgs/menuitems/{{appm.label}}.svg" />
+            <span>{{appm.name}}</span>
+        </a>
+        }
+    </mat-nav-list>
+</div>
 </div>

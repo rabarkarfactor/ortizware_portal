@@ -84,7 +84,7 @@ export class AppTools {
         return base64;
     }
 
-    static resizeImageFromDataUrl(dataUrl: string, maxWidth: number, maxHeight: number):  Promise<string> {
+    static resizeImageFromDataUrl(dataUrl: string, maxWidth: number, maxHeight: number): Promise<string> {
         return new Promise<string>((resolve) => {
             const image = new Image();
             image.onerror = function (err) { console.log("Failed Image", err); };
@@ -171,7 +171,7 @@ export class AppTools {
         });
     }
 
-    static getWindowSize(): {height: number, width: number, layout: string} {
+    static getWindowSize(): { height: number, width: number, layout: string } {
         var size = 'na';
         if (window.innerWidth < 768) {
             size = 'xs';
@@ -197,7 +197,6 @@ export class AppTools {
         if (user.b64Pic && user.b64Pic.trim() != '')
             user.safePic = sanitizer.bypassSecurityTrustResourceUrl(user.b64Pic);
         else
-        user.safePic = sanitizer.bypassSecurityTrustResourceUrl('assets/imgs/generic_user.svg');
+            user.safePic = sanitizer.bypassSecurityTrustResourceUrl('assets/imgs/generic_user.svg');
     }
-
 }

@@ -15,7 +15,7 @@
 
 <mat-sidenav-container>
   <mat-sidenav mode="over" #sidenav>
-    <app-menu-panel></app-menu-panel>
+    <app-menu-panel [user]="currentUser" (logoutTriggered)="logout()"></app-menu-panel>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="content">
@@ -25,5 +25,5 @@
 </mat-sidenav-container>
 }
 @else {
-<app-login></app-login>
+<app-login (loginSubmitted)="doLogin($event)"></app-login>
 }

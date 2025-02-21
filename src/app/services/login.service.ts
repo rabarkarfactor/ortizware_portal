@@ -14,7 +14,7 @@ export class LoginService {
     private http: HttpApiClient;
 
     public static get ApiToken(): string | undefined {
-        return 'debug'; //LoginService.authToken;
+        return LoginService.authToken;
     }
 
     public static get User(): User | undefined {
