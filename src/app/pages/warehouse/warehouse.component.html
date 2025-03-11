@@ -1,1 +1,42 @@
-<p>warehouse works!</p>
+<app-modalloading *ngIf="isLoading"></app-modalloading>
+<h3>Replenishment Warehouse</h3>
+<div class="divbody">
+  @for(st of stdatas; track st.store){
+  <div class="divcard inline">
+    <a class="alink"><span class="spantitle" (click)="goToDetail(st.store)">{{st.store}}</span></a>
+    <div>
+      <span class="spansubtitle">Productos en Stock</span> <br />
+      <span class="spandata">{{st.qty_items}}</span>
+    </div>
+    <div class="col50 inline">
+      <span class="spansubtitle">Clase A</span><br />
+      <span class="spandata">{{st.sales_metales}}</span>
+    </div>
+    <div class="col50 inline">
+      <span class="spansubtitle">Clase B</span><br />
+      <span class="spandata">{{st.sales_otros}}</span>
+    </div>
+    <div class="divdate">
+      <span>Fecha: Febrero 23, 2025</span>
+    </div>
+    <div class="divstat">
+      <span class="spansubtitle">Cortos</span><br />
+      <span class="spandata">000</span>
+    </div>
+  </div>
+  }
+
+  <div id="divdetails"  [ngClass]="{'show': active_warehousedetail}">
+    <h3>Details for {{_store}} Store</h3>
+    <h1 class="close" title="Close Details" (click)="CloseDetail()">X</h1>
+    <div class="divbody2">
+      <ul>
+        <li *ngFor="let item of stdatasfilter">
+          {{ item.store }}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>

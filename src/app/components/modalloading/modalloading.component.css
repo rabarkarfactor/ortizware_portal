@@ -1,0 +1,42 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+span {
+  font-size: 5vh;
+  color: #0094ff;
+}
+
+.typing-effect {
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  color:#0094ff;
+  border-right: 0.15em solid #0094ff;
+  animation: typing 4s steps(13, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0
+  }
+
+  50% {
+    width: 10ch
+  }
+  100% {
+    width: 0
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #0094ff
+  }
+}

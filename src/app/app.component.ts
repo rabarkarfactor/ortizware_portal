@@ -12,6 +12,8 @@ import { User } from './models/app.models';
 import { MatDialog } from '@angular/material/dialog';
 import { AppTools } from './app.tools';
 import { AppCommonDialog, DialogArgs, DialogOps, DialogResult, DialogType } from './components/dialog/dialog.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @Component({
   selector: 'app-root',
@@ -23,7 +25,7 @@ import { AppCommonDialog, DialogArgs, DialogOps, DialogResult, DialogType } from
     MatButtonModule,
     LoginComponent,
     MenuPanelComponent,
-    MenuPanelComponent
+    MatProgressSpinnerModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
